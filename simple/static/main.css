@@ -1,0 +1,26 @@
+ul{
+    list-style-type: none;
+    padding: 20px;
+}
+li{
+    display: inline;
+}
+li a{
+    margin: 20px;
+    text-transform: uppercase;
+    color: #ffff;
+    padding: 20px;
+    
+}
+
+li :hover{
+    background-color: #ffff;
+    color: dodgerblue;
+    text-decoration: none;
+}
+
+.main{
+    background-color: lightgray;
+    padding: 120px;
+    border-bottom-right-radius: 300px;
+}
