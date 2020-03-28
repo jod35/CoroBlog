@@ -68,3 +68,7 @@ def home_page():
 def log_out():
    logout_user()
    return redirect(url_for('index'))
+
+@app.errorhandler(404)
+def not_fount(error):
+   return render_template('404.html'),404
