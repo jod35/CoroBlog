@@ -24,3 +24,10 @@ li :hover{
     padding: 120px;
     border-bottom-right-radius: 300px;
 }
+.container{
+    min-height: 500px;
+}
+
+footer{
+    padding: 25px;
+}

@@ -25,9 +25,14 @@
     </div>
     
     <div class="form-group">
-
         <button type="submit" class="btn btn-primary">Login</button>
     </div>
+
+    <br>
+    <small><a href="{{url_for('login')}}">Forgot Password?</a></small>
+     <br>
+    <small>Do not have an Account, <a href="{{url_for('create_account')}}">Create One</a></small>
+   
 </form>
 {% endblock body %}
     
