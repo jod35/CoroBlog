@@ -2,7 +2,7 @@ from . import app,db
 from flask import render_template,request,redirect,url_for,flash
 from werkzeug.security import generate_password_hash,check_password_hash
 from flask_login import login_user,logout_user,current_user
-from .models import User
+from .models import User,Post
 
 @app.route('/')
 def index():
@@ -68,6 +68,16 @@ def home_page():
 def log_out():
    logout_user()
    return redirect(url_for('index'))
+
+@app.route('/post',methods=['POST'])
+def create_post():
+   post_content=request.form.get('post_content')
+   new_post=Post(post_comment=post_content,author=current_user)
+   db.session.add(new_post)
+   db.session.commit()
+   flash("Your post is now live")
+   return redirect(url_for('home_page'))
+   
 
 @app.errorhandler(404)
 def not_fount(error):
