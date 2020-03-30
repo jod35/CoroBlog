@@ -4,7 +4,7 @@
     {% if messages %}
        {% for message in messages %}
            <div class="alert-success alert">
-               {{ message }}   
+               {{ message }}
            </div>
        {% endfor %}
     {% endif %}
@@ -19,25 +19,9 @@
           <button type="submit" class="btn btn-primary">Post</button>
         </div>
     </form>
-    <div class="">
-      {% for post in posts %}
-      <div class="media">
-            <div class="media-left media-middle">
-               <a href="#">
-                 <h3>{{post.author}}</h3>
-               </a>
-            </div>
-             <div class="media-body">
-               <h4 class="media-heading">{{post.post_comment}}</h4>
-               <div class="comment">
-                <a href="">Comment</a> <a href="">Like</a>
-               </div>
-             </div>
-           </div>
-      {% endfor %}
+  
     </div>
  </div>
 
 
 {% endblock body %}
-    

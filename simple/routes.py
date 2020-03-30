@@ -62,11 +62,8 @@ def about():
 
 @app.route('/home')
 def home_page():
-   posts=Post.query.order_by(Post.id.desc()).all()
-   context={
-      'posts':posts
-   }
-   return render_template('homepage.html',**context)
+
+   return render_template('homepage.html')
 
 @app.route('/logout')
 def log_out():
@@ -82,6 +79,13 @@ def create_post():
    flash("Your post is now live")
    return redirect(url_for('home_page'))
 
+@app.route('/posts')
+def posts():
+     posts=Post.query.order_by(Post.id.desc()).all()
+     context={
+        'posts':posts
+     }
+     return render_template('posts.html',**context)
 
 @app.errorhandler(404)
 def not_fount(error):

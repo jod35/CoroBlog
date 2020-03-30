@@ -5,14 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../static/bootstrap.min.css">
     <link rel="stylesheet" href="../static/main.css">
-    
+
     <title>CoroBlog</title>
 </head>
 <body>
     <ul class="bg-primary">
-       
+
        {% if current_user.is_authenticated %}
                <li><a href="{{url_for('home_page')}}">Home</a></li>
+               <li><a href="{{url_for('posts')}}">Posts</a> </li>
                <li><a href="{{url_for('log_out')}}">Log out</a></li>
        {% else %}
                 <li><a href="{{url_for('index')}}">Home</a></li>
@@ -20,12 +21,12 @@
                 <li><a href="{{url_for('login')}}">Login</a></li>
                 <li><a href="{{url_for('create_account')}}">Register</a></li>
        {% endif %}
-           
+
     </ul>
 
     <div class="container">
         {% block body %}
-            
+
         {% endblock body %}
     </div>
 
