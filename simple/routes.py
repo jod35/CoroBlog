@@ -19,9 +19,9 @@ def create_account():
       print(confirm)
       print(password)
 
-      existing_user=(User.query.filter_by(username=username).first() or 
+      existing_user=(User.query.filter_by(username=username).first() or
       User.query.filter_by(email=email).first())
-      
+
       if existing_user:
          flash("The account already exists")
          return redirect(url_for('create_account'))
@@ -37,7 +37,7 @@ def create_account():
       db.session.commit()
       flash("Account created Succcessfully")
       return redirect(url_for('login'))
-      
+
    return render_template('signup.html')
 
 
@@ -46,8 +46,8 @@ def login():
    prompt=request.form.get('prompt')
    password=request.form.get('password')
 
-   existing_user=(User.query.filter_by(username=prompt).first() or 
-     User.query.filter_by(email=prompt).first() 
+   existing_user=(User.query.filter_by(username=prompt).first() or
+     User.query.filter_by(email=prompt).first()
    )
 
    if existing_user and check_password_hash(existing_user.password,password):
@@ -62,7 +62,11 @@ def about():
 
 @app.route('/home')
 def home_page():
-   return render_template('homepage.html')
+   posts=Post.query.order_by(Post.id.desc()).all()
+   context={
+      'posts':posts
+   }
+   return render_template('homepage.html',**context)
 
 @app.route('/logout')
 def log_out():
@@ -77,7 +81,7 @@ def create_post():
    db.session.commit()
    flash("Your post is now live")
    return redirect(url_for('home_page'))
-   
+
 
 @app.errorhandler(404)
 def not_fount(error):

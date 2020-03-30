@@ -27,7 +27,12 @@ li :hover{
 .container{
     min-height: 500px;
 }
-
+.comment{
+    display: flex;
+}
+.comment a{
+    margin: 20px;
+}
 footer{
     padding: 25px;
 }
