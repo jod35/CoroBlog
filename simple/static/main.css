@@ -13,6 +13,7 @@ body{
     box-sizing: border-box;
     background-image:linear-gradient(24deg,var(--white),var(--gray)) ;
     font-family: sans-serif;
+    color: var(--white);
 }
 
 .mynav {
