@@ -5,26 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
     <link rel="stylesheet" href="../static/main.css">
+    <link rel="stylesheet" href="../static/bootstrap.min.css">
 
     <title>CoroBlog</title>
 </head>
 <body>
-    <ul class="bg-primary mynav">
-
+    <ul class=" mynav">
+               <li class="logo">Coroblog</li>
        {% if current_user.is_authenticated %}
-               <li><a href="{{url_for('home_page')}}">Home</a></li>
-               <li><a href="{{url_for('posts')}}">Posts</a></li>
-               <li><a href="{{url_for('log_out')}}">Log out</a></li>
+               <li><a href="{{url_for('home_page')}}" class="navbtn">Home</a></li>
+               <li><a href="{{url_for('posts')}}" class="navbtn">Posts</a></li>
+               <li><a href="{{url_for('log_out')}}" class="navbtn">Log out</a></li>
        {% else %}
-                <li><a href="{{url_for('index')}}">Home</a></li>
-                <li><a href="{{url_for('about')}}">About</a></li>
-                <li><a href="{{url_for('login')}}">Login</a></li>
-                <li><a href="{{url_for('create_account')}}">Register</a></li>
+                <li><a href="{{url_for('index')}}" class="navbtn">Home</a></li>
+                <li><a href="{{url_for('about')}}" class="navbtn">About</a></li>
+                <li><a href="{{url_for('login')}}" class="navbtn">Login</a></li>
+                <li><a href="{{url_for('create_account')}}" class="navbtn">Register</a></li>
        {% endif %}
 
     </ul>
 
-    <div class="container">
+    <div class="main">
         {% block body %}
 
         {% endblock body %}
