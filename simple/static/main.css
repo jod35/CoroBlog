@@ -1,33 +1,65 @@
-ul{
-    list-style-type: none;
-    padding: 20px;
+:root{
+    --white:white;
+    --green:green;
+    --blue:dodgerblue;
+    --red:red;
+    --radius:7px;
+    --gray:gray;
+    --black:rgba(0, 0, 0, 0.24);
 }
-li{
+
+body{
+    background-color: var(--gray);
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+.logo{
+    color: var(--white);
+    padding: 20px;
+    font-weight: bolder;
+    font-size: 30px;
+    font-family: cursive;
+}
+.mynav{
+    background-color:var(--blue);
+    box-shadow: 5px 5px 5px 5px var(--black);
+    margin-top: 0;
+    padding:40px;
+    left: 0;
+    top: 0;
+    position: fixed;
+    width: 100%;
+}
+
+.mynav li{
+    list-style: none;
     display: inline;
 }
-li a{
-    margin: 20px;
-    text-transform: uppercase;
-    color: #ffff;
+
+.mynav a{
+    color: var(--white);
     padding: 20px;
+    text-decoration: none;
+    border:1px white solid;
+    border-radius: var(--radius);
     
 }
 
-li :hover{
-    background-color: #ffff;
-    color: dodgerblue;
-    text-decoration: none;
+.navbtn:hover{
+    background-color: var(--white);
+    color: var(--blue);
 }
 
 .main{
-    background-color: lightgray;
-    padding: 120px;
-    border-bottom-right-radius: 300px;
-}
-.container{
-    min-height: 500px;
+    min-height: 80vh;
+    padding: 5%;
+    background-color: var(--white);
 }
 
 footer{
-    padding: 25px;
+    background-color: var(--blue);
+    padding: 20px;
+    color: var(--white);
 }

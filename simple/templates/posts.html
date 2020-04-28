@@ -1,0 +1,22 @@
+{%extends 'layout.html'%}
+{%block body%}
+
+<div class="container">
+  <h1>Recent Posts</h1>
+  {% for post in posts %}
+  <div class="media">
+        <div class="media-left media-middle">
+             <h2>{{post.author}}</h2>
+             <small>{{post.date_posted.strftime('%d %m %Y')}}</small>
+
+        </div>
+         <div class="media-body">
+           <p>{{post.post_comment}}</p>
+           <div class="comment">
+             
+            <a href="">Comment</a> <a href="">Like</a>
+           </div>
+         </div>
+       </div>
+  {% endfor %}
+{%endblock body%}

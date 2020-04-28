@@ -11,28 +11,30 @@
     {% endif %}
 {% endwith %}
     
-<form action="{{url_for('login')}}" method="post">
-    <h1>Login</h1>
-
-    <div class="form-group">
-        <label for="prompt">Username or Email</label>
-        <input type="text" name="prompt" id="" class="form-control">    
-    </div>
-
-    <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" name="password" id="" class="form-control">
-    </div>
+<div class="main form">
+    <form action="{{url_for('login')}}" method="post">
+        <h1>Login</h1>
     
-    <div class="form-group">
-        <button type="submit" class="btn btn-primary">Login</button>
-    </div>
-
-    <br>
-    <small><a href="{{url_for('login')}}">Forgot Password?</a></small>
-     <br>
-    <small>Do not have an Account, <a href="{{url_for('create_account')}}">Create One</a></small>
-   
-</form>
+        <div class="form-group">
+            <label for="prompt">Username or Email</label>
+            <input type="text" name="prompt" id="" class="form-control">    
+        </div>
+    
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="" class="form-control">
+        </div>
+        
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Login</button>
+        </div>
+    
+        <br>
+        <small><a href="{{url_for('login')}}">Forgot Password?</a></small>
+         <br>
+        <small>Do not have an Account, <a href="{{url_for('create_account')}}">Create One</a></small>
+       
+    </form>
+</div>
 {% endblock body %}
     
