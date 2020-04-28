@@ -1,7 +1,7 @@
 {%extends 'layout.html'%}
 {%block body%}
 
-<div class="main">
+<div class="container">
   <h1>Recent Posts</h1>
   {% for post in posts %}
   <div class="media">
@@ -13,6 +13,7 @@
          <div class="media-body">
            <p>{{post.post_comment}}</p>
            <div class="comment">
+             
             <a href="">Comment</a> <a href="">Like</a>
            </div>
          </div>

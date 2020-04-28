@@ -1,49 +1,57 @@
-ul{
-    list-style-type: none;
-    padding: 20px;
-}
-.mynav{
-  top: 0;
-  left: 0;
-  position: fixed;
-  width: 100%;
-}
-li{
-    display: inline;
-}
-li a{
-    margin: 20px;
-    text-transform: uppercase;
-    color: #ffff;
-    padding: 20px;
-
-}
-.media{
-  background-color: white;
-  padding:20px;
-  border-radius: 7px;
+:root{
+    --blue:rgb(44, 114, 184);
+    --black:black;
+    --green:green;
+    --red:red;
+    --gray:lightgray;
+    --white:white;
 }
 
-li :hover{
-    background-color: #ffff;
-    color: dodgerblue;
+body{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    background-image:linear-gradient(24deg,var(--white),var(--gray)) ;
+    font-family: sans-serif;
+}
+
+.mynav {
+    padding: 30px;
+    background-color: var(--blue);
+    
+    margin-top: 0;
+
+}
+
+.mynav li{
+  list-style-type: none;
+  display: inline;
+  
+}
+
+.mynav a{
     text-decoration: none;
+    padding: 20px;
+    color: var(--white);
+    border:1px solid var(--gray);
+    border-radius: 7px;
+}
+
+.mynav a:hover{
+    
+    background-color: var(--white);
+    color:var(--blue);
+}
+
+
+.container{
+min-height: 80vh;
+display: flex;
+align-items: center;
+justify-content: center;
 }
 
 .main{
-    background-color: lightgray;
-    padding: 80px;
-    border-bottom-right-radius: 300px;
-}
-.container{
-    min-height: 500px;
-}
-.comment{
-    display: flex;
-}
-.comment a{
-    margin: 20px;
-}
-footer{
-    padding: 25px;
+    background-color: var(--white);
+    padding: 10%;
 }
