@@ -5,7 +5,20 @@
   <h1>Recent Posts</h1>
   {% for post in posts %}
   <div class="post">
-    <a href="">{{post.post_comment}}</a>
+    <div class="post-author">
+      <h4>{{post.author}}</h4> <span><i class="fa fa-clock-o fa-2x" aria-hidden="true"></i> on {{post.date_posted.strftime("%b %d %Y")}}</span>
+    </div>
+    <div class="post-content">
+      <p>{{post.post_comment}}</p>
+      <div class="options">
+          <div class="option">
+            <a href=""><i class="fa fa-thumbs-up fa-2x" aria-hidden="true"></i>Like</a>
+          </div>
+          <div class="option">
+            <a href=""><i class="fa fa-comment fa-2x" aria-hidden="true"></i>Comment</a>
+          </div>
+      </div>
+    </div>
   </div>
   {% endfor %}
 {%endblock body%}
